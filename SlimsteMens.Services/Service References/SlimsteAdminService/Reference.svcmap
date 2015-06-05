@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="638ec3bc-8d23-4775-ab27-c5fbe77ed3e1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8733/SlimsteService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="cce84ddc-c13c-44dd-a68b-85d479898769" SourceId="1" SourceUrl="net.tcp://localhost:8733/SlimsteService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="6bbec38f-3dba-42bb-a5cd-67f6fc7944f8" SourceId="1" SourceUrl="net.tcp://localhost:8733/SlimsteService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="ac21d9c9-6f14-4aee-b0fd-fe4529415197" SourceId="1" SourceUrl="net.tcp://localhost:8733/SlimsteService/mex" />
+    <MetadataFile FileName="SlimsteMens.Service.DataContracts.xsd" MetadataType="Schema" ID="52117f1f-0d07-4a3a-a6bc-0f915401c0e6" SourceId="1" SourceUrl="net.tcp://localhost:8733/SlimsteService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

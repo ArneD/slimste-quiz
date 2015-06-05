@@ -160,6 +160,7 @@ ClientBin/
 *.dbproj.schemaview
 *.pfx
 *.publishsettings
+.nuget
 node_modules/
 bower_components/
 

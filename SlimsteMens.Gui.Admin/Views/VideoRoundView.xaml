@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="SlimsteMens.Gui.Admin.Views.VideoRoundView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:con="clr-namespace:SlimsteMens.Gui.Controls.ValueConverters;assembly=SlimsteMens.Gui.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.Resources>
+            <con:AdvBooleanToVisibilityConverter x:Key="boolToVisConverter"></con:AdvBooleanToVisibilityConverter>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="4" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <CheckBox IsChecked="{Binding IsAnswer1Checked}" Command="{Binding AnswerCorrectCommand}" CommandParameter="{Binding VideoQuestion.Answer1}">
+                <TextBlock Text="{Binding VideoQuestion.Answer1}"></TextBlock>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding IsAnswer2Checked}" Grid.Row="1" Command="{Binding AnswerCorrectCommand}" CommandParameter="{Binding VideoQuestion.Answer2}">
+                <TextBlock Text="{Binding VideoQuestion.Answer2}"></TextBlock>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding IsAnswer3Checked}" Grid.Row="2" Command="{Binding AnswerCorrectCommand}" CommandParameter="{Binding VideoQuestion.Answer3}">
+                <TextBlock Text="{Binding VideoQuestion.Answer3}"></TextBlock>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding IsAnswer4Checked}" Grid.Row="3" Command="{Binding AnswerCorrectCommand}" CommandParameter="{Binding VideoQuestion.Answer4}">
+                <TextBlock Text="{Binding VideoQuestion.Answer4}"></TextBlock>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding IsAnswer5Checked}" Grid.Row="4" Command="{Binding AnswerCorrectCommand}" CommandParameter="{Binding VideoQuestion.Answer5}">
+                <TextBlock Text="{Binding VideoQuestion.Answer5}"></TextBlock>
+            </CheckBox>
+        </Grid>
+        
+        <Button Grid.Row="1" Visibility="{Binding NextVideoCommand.IsEnabled, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}" Command="{Binding NextVideoCommand}">Volgende video</Button>
+        <Button Grid.Row="1" Visibility="{Binding NextRoundCommand.IsEnabled, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}" Command="{Binding NextRoundCommand}">Volgende ronde</Button>
+        <Button Grid.Row="1" Visibility="{Binding PlayVideoCommand.IsEnabled, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}" Grid.ColumnSpan="2" Command="{Binding PlayVideoCommand}" >Play video</Button>
+        <Button Grid.Row="1" Visibility="{Binding SkipVideoCommand.IsEnabled, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}" Grid.ColumnSpan="2" Command="{Binding SkipVideoCommand}" >Skip video</Button>
+        <Button Grid.Row="1" Visibility="{Binding NextTurnCommand.IsEnabled, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}" Grid.ColumnSpan="2" Command="{Binding NextTurnCommand}" >Volgende beurt</Button>
+        <Button Grid.Row="1" Visibility="{Binding StartTimerCommand.IsEnabled, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}" Grid.ColumnSpan="2" Command="{Binding StartTimerCommand}" >Start timer</Button>
+        <Button Grid.Row="1" Visibility="{Binding StopTimerCommand.IsEnabled, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}" Grid.ColumnSpan="2" Command="{Binding StopTimerCommand}" >Stop timer</Button>
+        <Button Grid.Row="1" Grid.Column="1" Visibility="{Binding ShowAnswersCommand.IsEnabled, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}" Grid.ColumnSpan="2" Command="{Binding ShowAnswersCommand}" >Toon antwoorden</Button>
+        <ContentPresenter Grid.ColumnSpan="5" Grid.Row="5" Content="{Binding ScoreView}" />
+    </Grid>
+</UserControl>

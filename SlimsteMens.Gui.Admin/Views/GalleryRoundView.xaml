@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="SlimsteMens.Gui.Admin.Views.GalleryRoundView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:con="clr-namespace:SlimsteMens.Gui.Controls.ValueConverters;assembly=SlimsteMens.Gui.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" x:Name="UC">
+    <Grid>
+        <Grid.Resources>
+            <con:AdvBooleanToVisibilityConverter x:Key="boolToVisConverter"></con:AdvBooleanToVisibilityConverter>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Margin="10" Source="{Binding CurrentImage}" Grid.ColumnSpan="4" Stretch="Uniform">
+            
+        </Image>
+
+        <ItemsControl Margin="10" ItemsSource="{Binding GalleryQuestionsToGuess}" Grid.ColumnSpan="2" Visibility="{Binding CanOthersGuess, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}">
+            <ItemsControl.ItemTemplate>
+                <ItemContainerTemplate>
+                    <CheckBox Command="{Binding DataContext.GuessCorrectCommand, ElementName=UC}">
+                        <TextBlock Text="{Binding Answer}"></TextBlock></CheckBox>
+                </ItemContainerTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Answer}" HorizontalAlignment="Center"></TextBlock>
+        
+        <Button Grid.Row="2" Command="{Binding StartGalleryCommand}" Visibility="{Binding NextGalleryAvailable, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}">Start Galerij</Button>
+        <Button Grid.Row="2" Grid.Column="1" Command="{Binding ShowAnswersCommand}" Visibility="{Binding ShowAnswersAvailable, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}">Toon antwoorden</Button>
+        <Button Grid.Row="2" Grid.Column="1" Command="{Binding NextAnswerCommand}" Visibility="{Binding IsNextAnswerAvailable, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}">Volgend antwoord</Button>
+        
+        <Button Grid.Row="2" Command="{Binding CorrectCommand}" Visibility="{Binding IsFirstPlayerStarted, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}">Correct</Button>
+        <Button Grid.Row="2" Grid.Column="1" Command="{Binding IncorrectCommand}" Visibility="{Binding IsFirstPlayerStarted, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}">Incorrect</Button>
+        
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Command="{Binding StopTimerCommand}" Visibility="{Binding StopTimerAvaibable, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}">Stop Timer</Button>
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Command="{Binding NextRoundCommand}" Visibility="{Binding NextRoundAvailable, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}">Volgende ronde</Button>
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Command="{Binding NextTurnCommand}" Visibility="{Binding NextTurnAvailable, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}">Volgende beurt</Button>
+        <ContentPresenter Grid.ColumnSpan="10" Grid.Row="10" Content="{Binding ScoreView}" />
+    </Grid>
+</UserControl>

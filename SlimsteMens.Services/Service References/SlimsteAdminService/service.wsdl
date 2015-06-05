@@ -1,0 +1,992 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SlimsteService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_ISlimsteService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SlimsteMens.Service.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISlimsteService_Start_InputMessage">
+    <wsdl:part name="parameters" element="tns:Start" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_ResetGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetGame" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_Subscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:Subscribe" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_Subscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_Unsubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:Unsubscribe" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_StartTimer_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartTimer" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_StopTimer_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopTimer" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_NextRound_InputMessage">
+    <wsdl:part name="parameters" element="tns:NextRound" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_SetTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetTime" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_StartRound369_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartRound369" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_Question369Incorrect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Question369Incorrect" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_Question369Correct_InputMessage">
+    <wsdl:part name="parameters" element="tns:Question369Correct" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_AddQuestion369_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddQuestion369" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_AddQuestion369_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddQuestion369Response" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_StartRoundPuzzle_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartRoundPuzzle" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_NextPuzzle_InputMessage">
+    <wsdl:part name="parameters" element="tns:NextPuzzle" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_ShowPuzzleAnswers_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowPuzzleAnswers" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_NextTurnForPuzzle_InputMessage">
+    <wsdl:part name="parameters" element="tns:NextTurnForPuzzle" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_QuestionPuzzleCorrect_InputMessage">
+    <wsdl:part name="parameters" element="tns:QuestionPuzzleCorrect" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_AddPuzzleQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPuzzleQuestion" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_AddPuzzleQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPuzzleQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_StartRoundGallery_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartRoundGallery" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_NextGallery_InputMessage">
+    <wsdl:part name="parameters" element="tns:NextGallery" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_NextTurnForGallery_InputMessage">
+    <wsdl:part name="parameters" element="tns:NextTurnForGallery" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_GalleryQuestionCorrect_InputMessage">
+    <wsdl:part name="parameters" element="tns:GalleryQuestionCorrect" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_GalleryQuestionIncorrect_InputMessage">
+    <wsdl:part name="parameters" element="tns:GalleryQuestionIncorrect" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_ShowNextGalleryQuestionAnswer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowNextGalleryQuestionAnswer" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_AddGallery_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGallery" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_AddGallery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGalleryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_StartRoundVideo_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartRoundVideo" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_NextVideo_InputMessage">
+    <wsdl:part name="parameters" element="tns:NextVideo" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_PlayVideo_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayVideo" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_PlayVideoCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayVideoCompleted" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_NextTurnForVideo_InputMessage">
+    <wsdl:part name="parameters" element="tns:NextTurnForVideo" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_QuestionVideoCorrect_InputMessage">
+    <wsdl:part name="parameters" element="tns:QuestionVideoCorrect" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_ShowVideoAnswers_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowVideoAnswers" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_AddVideo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddVideo" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_AddVideo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddVideoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_StartFinale_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartFinale" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_NextFinaleQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:NextFinaleQuestion" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_ShowFinaleQuestionAnswers_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowFinaleQuestionAnswers" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_NextTurnForFinaleQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:NextTurnForFinaleQuestion" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_FinaleQuestionCorrect_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinaleQuestionCorrect" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_SetTieBreakerWinner_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetTieBreakerWinner" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_SetFinaleTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetFinaleTime" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_AddFinaleQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFinaleQuestion" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_AddFinaleQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFinaleQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnGameStarted_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnGameStarted" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnFinaleStarted_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnFinaleStarted" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnSetTimer_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnSetTimer" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnSetTimerFinale_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnSetTimerFinale" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnTurnChange_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnTurnChange" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnFinaleTurnChange_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnFinaleTurnChange" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnStartRound369_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnStartRound369" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnQuestion369_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnQuestion369" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnEndRound369_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnEndRound369" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnStartRoundPuzzle_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnStartRoundPuzzle" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnQuestionPuzzle_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnQuestionPuzzle" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnPuzzleCorrect_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnPuzzleCorrect" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnQuestionPuzzleCompleted_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnQuestionPuzzleCompleted" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnShowPuzzleAnswers_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnShowPuzzleAnswers" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnEndRoundPuzzle_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnEndRoundPuzzle" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnStartRoundGallery_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnStartRoundGallery" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnNextGalleryQuestion_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnNextGalleryQuestion" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnGalleryCompleted_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnGalleryCompleted" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnQuestionGallery_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnQuestionGallery" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnShowGalleryAnswer_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnShowGalleryAnswer" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnEndRoundGallery_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnEndRoundGallery" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnStartRoundVideo_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnStartRoundVideo" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnQuestionVideo_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnQuestionVideo" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnPlayVideo_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnPlayVideo" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnPlayVideoCompleted_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnPlayVideoCompleted" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnVideoQuestionCorrect_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnVideoQuestionCorrect" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnVideoCompleted_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnVideoCompleted" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnShowVideoAnswers_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnShowVideoAnswers" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnEndRoundVideo_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnEndRoundVideo" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnTiebreakerQuestion_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnTiebreakerQuestion" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnFinaleQuestion_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnFinaleQuestion" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnFinaleQuestionCompleted_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnFinaleQuestionCompleted" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnShowFinaleQuestionAnswers_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnShowFinaleQuestionAnswers" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnFinaleAnswerCorrect_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnFinaleAnswerCorrect" />
+  </wsdl:message>
+  <wsdl:message name="ISlimsteService_OnGameWon_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnGameWon" />
+  </wsdl:message>
+  <wsdl:portType name="ISlimsteService">
+    <wsdl:operation name="Start">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/Start" message="tns:ISlimsteService_Start_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/ResetGame" message="tns:ISlimsteService_ResetGame_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Subscribe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/Subscribe" message="tns:ISlimsteService_Subscribe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/SubscribeResponse" message="tns:ISlimsteService_Subscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/Unsubscribe" message="tns:ISlimsteService_Unsubscribe_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartTimer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/StartTimer" message="tns:ISlimsteService_StartTimer_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopTimer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/StopTimer" message="tns:ISlimsteService_StopTimer_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NextRound">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/NextRound" message="tns:ISlimsteService_NextRound_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/SetTime" message="tns:ISlimsteService_SetTime_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartRound369">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/StartRound369" message="tns:ISlimsteService_StartRound369_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Question369Incorrect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/Question369Incorrect" message="tns:ISlimsteService_Question369Incorrect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Question369Correct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/Question369Correct" message="tns:ISlimsteService_Question369Correct_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddQuestion369">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/AddQuestion369" message="tns:ISlimsteService_AddQuestion369_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/AddQuestion369Response" message="tns:ISlimsteService_AddQuestion369_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartRoundPuzzle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/StartRoundPuzzle" message="tns:ISlimsteService_StartRoundPuzzle_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NextPuzzle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/NextPuzzle" message="tns:ISlimsteService_NextPuzzle_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowPuzzleAnswers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/ShowPuzzleAnswers" message="tns:ISlimsteService_ShowPuzzleAnswers_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NextTurnForPuzzle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/NextTurnForPuzzle" message="tns:ISlimsteService_NextTurnForPuzzle_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QuestionPuzzleCorrect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/QuestionPuzzleCorrect" message="tns:ISlimsteService_QuestionPuzzleCorrect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPuzzleQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/AddPuzzleQuestion" message="tns:ISlimsteService_AddPuzzleQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/AddPuzzleQuestionResponse" message="tns:ISlimsteService_AddPuzzleQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartRoundGallery">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/StartRoundGallery" message="tns:ISlimsteService_StartRoundGallery_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NextGallery">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/NextGallery" message="tns:ISlimsteService_NextGallery_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NextTurnForGallery">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/NextTurnForGallery" message="tns:ISlimsteService_NextTurnForGallery_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GalleryQuestionCorrect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/GalleryQuestionCorrect" message="tns:ISlimsteService_GalleryQuestionCorrect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GalleryQuestionIncorrect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/GalleryQuestionIncorrect" message="tns:ISlimsteService_GalleryQuestionIncorrect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowNextGalleryQuestionAnswer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/ShowNextGalleryQuestionAnswer" message="tns:ISlimsteService_ShowNextGalleryQuestionAnswer_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGallery">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/AddGallery" message="tns:ISlimsteService_AddGallery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/AddGalleryResponse" message="tns:ISlimsteService_AddGallery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartRoundVideo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/StartRoundVideo" message="tns:ISlimsteService_StartRoundVideo_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NextVideo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/NextVideo" message="tns:ISlimsteService_NextVideo_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayVideo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/PlayVideo" message="tns:ISlimsteService_PlayVideo_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayVideoCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/PlayVideoCompleted" message="tns:ISlimsteService_PlayVideoCompleted_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NextTurnForVideo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/NextTurnForVideo" message="tns:ISlimsteService_NextTurnForVideo_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QuestionVideoCorrect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/QuestionVideoCorrect" message="tns:ISlimsteService_QuestionVideoCorrect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowVideoAnswers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/ShowVideoAnswers" message="tns:ISlimsteService_ShowVideoAnswers_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddVideo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/AddVideo" message="tns:ISlimsteService_AddVideo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/AddVideoResponse" message="tns:ISlimsteService_AddVideo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartFinale">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/StartFinale" message="tns:ISlimsteService_StartFinale_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NextFinaleQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/NextFinaleQuestion" message="tns:ISlimsteService_NextFinaleQuestion_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowFinaleQuestionAnswers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/ShowFinaleQuestionAnswers" message="tns:ISlimsteService_ShowFinaleQuestionAnswers_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NextTurnForFinaleQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/NextTurnForFinaleQuestion" message="tns:ISlimsteService_NextTurnForFinaleQuestion_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinaleQuestionCorrect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/FinaleQuestionCorrect" message="tns:ISlimsteService_FinaleQuestionCorrect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTieBreakerWinner">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/SetTieBreakerWinner" message="tns:ISlimsteService_SetTieBreakerWinner_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFinaleTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/SetFinaleTime" message="tns:ISlimsteService_SetFinaleTime_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFinaleQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISlimsteService/AddFinaleQuestion" message="tns:ISlimsteService_AddFinaleQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/AddFinaleQuestionResponse" message="tns:ISlimsteService_AddFinaleQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnGameStarted">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnGameStarted" message="tns:ISlimsteService_OnGameStarted_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnFinaleStarted">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnFinaleStarted" message="tns:ISlimsteService_OnFinaleStarted_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnSetTimer">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnSetTimer" message="tns:ISlimsteService_OnSetTimer_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnSetTimerFinale">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnSetTimerFinale" message="tns:ISlimsteService_OnSetTimerFinale_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnTurnChange">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnTurnChange" message="tns:ISlimsteService_OnTurnChange_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnFinaleTurnChange">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnFinaleTurnChange" message="tns:ISlimsteService_OnFinaleTurnChange_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnStartRound369">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnStartRound369" message="tns:ISlimsteService_OnStartRound369_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnQuestion369">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnQuestion369" message="tns:ISlimsteService_OnQuestion369_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnEndRound369">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnEndRound369" message="tns:ISlimsteService_OnEndRound369_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnStartRoundPuzzle">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnStartRoundPuzzle" message="tns:ISlimsteService_OnStartRoundPuzzle_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnQuestionPuzzle">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnQuestionPuzzle" message="tns:ISlimsteService_OnQuestionPuzzle_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnPuzzleCorrect">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnPuzzleCorrect" message="tns:ISlimsteService_OnPuzzleCorrect_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnQuestionPuzzleCompleted">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnQuestionPuzzleCompleted" message="tns:ISlimsteService_OnQuestionPuzzleCompleted_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnShowPuzzleAnswers">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnShowPuzzleAnswers" message="tns:ISlimsteService_OnShowPuzzleAnswers_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnEndRoundPuzzle">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnEndRoundPuzzle" message="tns:ISlimsteService_OnEndRoundPuzzle_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnStartRoundGallery">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnStartRoundGallery" message="tns:ISlimsteService_OnStartRoundGallery_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnNextGalleryQuestion">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnNextGalleryQuestion" message="tns:ISlimsteService_OnNextGalleryQuestion_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnGalleryCompleted">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnGalleryCompleted" message="tns:ISlimsteService_OnGalleryCompleted_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnQuestionGallery">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnQuestionGallery" message="tns:ISlimsteService_OnQuestionGallery_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnShowGalleryAnswer">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnShowGalleryAnswer" message="tns:ISlimsteService_OnShowGalleryAnswer_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnEndRoundGallery">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnEndRoundGallery" message="tns:ISlimsteService_OnEndRoundGallery_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnStartRoundVideo">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnStartRoundVideo" message="tns:ISlimsteService_OnStartRoundVideo_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnQuestionVideo">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnQuestionVideo" message="tns:ISlimsteService_OnQuestionVideo_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnPlayVideo">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnPlayVideo" message="tns:ISlimsteService_OnPlayVideo_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnPlayVideoCompleted">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnPlayVideoCompleted" message="tns:ISlimsteService_OnPlayVideoCompleted_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnVideoQuestionCorrect">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnVideoQuestionCorrect" message="tns:ISlimsteService_OnVideoQuestionCorrect_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnVideoCompleted">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnVideoCompleted" message="tns:ISlimsteService_OnVideoCompleted_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnShowVideoAnswers">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnShowVideoAnswers" message="tns:ISlimsteService_OnShowVideoAnswers_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnEndRoundVideo">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnEndRoundVideo" message="tns:ISlimsteService_OnEndRoundVideo_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnTiebreakerQuestion">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnTiebreakerQuestion" message="tns:ISlimsteService_OnTiebreakerQuestion_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnFinaleQuestion">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnFinaleQuestion" message="tns:ISlimsteService_OnFinaleQuestion_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnFinaleQuestionCompleted">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnFinaleQuestionCompleted" message="tns:ISlimsteService_OnFinaleQuestionCompleted_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnShowFinaleQuestionAnswers">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnShowFinaleQuestionAnswers" message="tns:ISlimsteService_OnShowFinaleQuestionAnswers_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnFinaleAnswerCorrect">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnFinaleAnswerCorrect" message="tns:ISlimsteService_OnFinaleAnswerCorrect_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnGameWon">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISlimsteService/OnGameWon" message="tns:ISlimsteService_OnGameWon_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_ISlimsteService" type="tns:ISlimsteService">
+    <wsp:PolicyReference URI="#NetTcpBinding_ISlimsteService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Start">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/Start" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ResetGame">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/ResetGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Subscribe">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/Subscribe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/Unsubscribe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="StartTimer">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/StartTimer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="StopTimer">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/StopTimer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NextRound">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/NextRound" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SetTime">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/SetTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="StartRound369">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/StartRound369" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Question369Incorrect">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/Question369Incorrect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Question369Correct">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/Question369Correct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AddQuestion369">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/AddQuestion369" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartRoundPuzzle">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/StartRoundPuzzle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NextPuzzle">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/NextPuzzle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ShowPuzzleAnswers">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/ShowPuzzleAnswers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NextTurnForPuzzle">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/NextTurnForPuzzle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="QuestionPuzzleCorrect">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/QuestionPuzzleCorrect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AddPuzzleQuestion">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/AddPuzzleQuestion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartRoundGallery">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/StartRoundGallery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NextGallery">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/NextGallery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NextTurnForGallery">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/NextTurnForGallery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GalleryQuestionCorrect">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/GalleryQuestionCorrect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GalleryQuestionIncorrect">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/GalleryQuestionIncorrect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ShowNextGalleryQuestionAnswer">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/ShowNextGalleryQuestionAnswer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AddGallery">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/AddGallery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartRoundVideo">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/StartRoundVideo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NextVideo">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/NextVideo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="PlayVideo">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/PlayVideo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="PlayVideoCompleted">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/PlayVideoCompleted" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NextTurnForVideo">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/NextTurnForVideo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="QuestionVideoCorrect">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/QuestionVideoCorrect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ShowVideoAnswers">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/ShowVideoAnswers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AddVideo">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/AddVideo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartFinale">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/StartFinale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NextFinaleQuestion">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/NextFinaleQuestion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ShowFinaleQuestionAnswers">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/ShowFinaleQuestionAnswers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NextTurnForFinaleQuestion">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/NextTurnForFinaleQuestion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="FinaleQuestionCorrect">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/FinaleQuestionCorrect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SetTieBreakerWinner">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/SetTieBreakerWinner" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SetFinaleTime">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/SetFinaleTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AddFinaleQuestion">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/AddFinaleQuestion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnGameStarted">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnGameStarted" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnFinaleStarted">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnFinaleStarted" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnSetTimer">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnSetTimer" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnSetTimerFinale">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnSetTimerFinale" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnTurnChange">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnTurnChange" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnFinaleTurnChange">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnFinaleTurnChange" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnStartRound369">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnStartRound369" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnQuestion369">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnQuestion369" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnEndRound369">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnEndRound369" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnStartRoundPuzzle">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnStartRoundPuzzle" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnQuestionPuzzle">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnQuestionPuzzle" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnPuzzleCorrect">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnPuzzleCorrect" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnQuestionPuzzleCompleted">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnQuestionPuzzleCompleted" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnShowPuzzleAnswers">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnShowPuzzleAnswers" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnEndRoundPuzzle">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnEndRoundPuzzle" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnStartRoundGallery">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnStartRoundGallery" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnNextGalleryQuestion">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnNextGalleryQuestion" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnGalleryCompleted">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnGalleryCompleted" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnQuestionGallery">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnQuestionGallery" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnShowGalleryAnswer">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnShowGalleryAnswer" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnEndRoundGallery">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnEndRoundGallery" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnStartRoundVideo">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnStartRoundVideo" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnQuestionVideo">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnQuestionVideo" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnPlayVideo">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnPlayVideo" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnPlayVideoCompleted">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnPlayVideoCompleted" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnVideoQuestionCorrect">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnVideoQuestionCorrect" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnVideoCompleted">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnVideoCompleted" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnShowVideoAnswers">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnShowVideoAnswers" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnEndRoundVideo">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnEndRoundVideo" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnTiebreakerQuestion">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnTiebreakerQuestion" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnFinaleQuestion">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnFinaleQuestion" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnFinaleQuestionCompleted">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnFinaleQuestionCompleted" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnShowFinaleQuestionAnswers">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnShowFinaleQuestionAnswers" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnFinaleAnswerCorrect">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnFinaleAnswerCorrect" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnGameWon">
+      <soap12:operation soapAction="http://tempuri.org/ISlimsteService/OnGameWon" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SlimsteService">
+    <wsdl:port name="NetTcpBinding_ISlimsteService" binding="tns:NetTcpBinding_ISlimsteService">
+      <soap12:address location="net.tcp://localhost:8733/SlimsteService/" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8733/SlimsteService/</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

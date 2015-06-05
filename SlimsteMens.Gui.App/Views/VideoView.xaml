@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="SlimsteMens.Gui.App.Views.VideoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:con="clr-namespace:SlimsteMens.Gui.Controls.ValueConverters;assembly=SlimsteMens.Gui.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Loaded="VideoView_OnLoaded">
+    <Grid>
+        <Grid.Resources>
+            <con:AdvBooleanToVisibilityConverter x:Key="boolToVisConverter"></con:AdvBooleanToVisibilityConverter>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Visibility="{Binding IsVideoPlaying, Converter={StaticResource boolToVisConverter}, ConverterParameter=true}">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+           
+            <Viewbox>
+                <Label Style="{StaticResource AnswerEllipseStyle}" IsEnabled="{Binding IsAnswer1Enabled}" >
+                    <TextBlock Style="{StaticResource ScoreText}" Text="{Binding Score1Text}"></TextBlock>
+                </Label>
+            </Viewbox>
+            <Label Grid.Column="1" Style="{StaticResource AnswerLabel}" IsEnabled="{Binding IsAnswer1Enabled}">
+                <TextBlock Text="{Binding VideoQuestion.Answer1}" FontSize="28"></TextBlock>
+            </Label>
+
+            <Viewbox Grid.Row="1">
+                <Label Style="{StaticResource AnswerEllipseStyle}" IsEnabled="{Binding IsAnswer2Enabled}" >
+                    <TextBlock Style="{StaticResource ScoreText}" Text="{Binding Score2Text}"></TextBlock>
+                </Label>
+            </Viewbox>
+            <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource AnswerLabel}" IsEnabled="{Binding IsAnswer2Enabled}">
+                <TextBlock Text="{Binding VideoQuestion.Answer2}" FontSize="28"></TextBlock>
+            </Label>
+
+            <Viewbox Grid.Row="2">
+                <Label Style="{StaticResource AnswerEllipseStyle}" IsEnabled="{Binding IsAnswer3Enabled}" >
+                    <TextBlock Style="{StaticResource ScoreText}" Text="{Binding Score3Text}"></TextBlock>
+                </Label>
+            </Viewbox>
+            <Label Grid.Row="2" Grid.Column="1" Style="{StaticResource AnswerLabel}" IsEnabled="{Binding IsAnswer3Enabled}">
+                <TextBlock Text="{Binding VideoQuestion.Answer3}" FontSize="28"></TextBlock>
+            </Label>
+
+            <Viewbox Grid.Row="3">
+                <Label Style="{StaticResource AnswerEllipseStyle}" IsEnabled="{Binding IsAnswer4Enabled}" >
+                    <TextBlock Style="{StaticResource ScoreText}" Text="{Binding Score4Text}"></TextBlock>
+                </Label>
+            </Viewbox>
+            <Label Grid.Row="3" Grid.Column="1" Style="{StaticResource AnswerLabel}" IsEnabled="{Binding IsAnswer4Enabled}">
+                <TextBlock Text="{Binding VideoQuestion.Answer4}" FontSize="28"></TextBlock>
+            </Label>
+
+            <Viewbox Grid.Row="4">
+                <Label Style="{StaticResource AnswerEllipseStyle}" IsEnabled="{Binding IsAnswer5Enabled}" >
+                    <TextBlock Style="{StaticResource ScoreText}" Text="{Binding Score5Text}"></TextBlock>
+                </Label>
+            </Viewbox>
+            <Label Grid.Row="4" Grid.Column="1" Style="{StaticResource AnswerLabel}" IsEnabled="{Binding IsAnswer5Enabled}">
+                <TextBlock Text="{Binding VideoQuestion.Answer5}" FontSize="28"></TextBlock>
+            </Label>
+        </Grid>
+        <MediaElement Grid.ColumnSpan="5" Visibility="{Binding IsVideoPlaying, Converter={StaticResource boolToVisConverter}, ConverterParameter=false}" LoadedBehavior="Manual" Stretch="Uniform" Name="videoElement" Source="{Binding VideoQuestion.VideoPath}" MediaEnded="MediaElement_MediaEnded">
+
+        </MediaElement>
+        <ContentPresenter Grid.ColumnSpan="20" Grid.Row="5" Content="{Binding ScoreView}" />
+        <MediaElement Source="Audio/Intermezzo.wma" LoadedBehavior="Manual" Visibility="Collapsed" Volume="1" Name="AudioElement"></MediaElement>
+    </Grid>
+</UserControl>

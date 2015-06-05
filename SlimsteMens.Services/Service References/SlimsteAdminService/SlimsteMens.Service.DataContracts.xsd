@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SlimsteMens.Service.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SlimsteMens.Service.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="GameDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Rounds" nillable="true" type="tns:ArrayOfRoundTypeDto" />
+      <xs:element minOccurs="0" name="StartingSeconds" type="xs:int" />
+      <xs:element minOccurs="0" name="Team1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Team2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Team3" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameDto" nillable="true" type="tns:GameDto" />
+  <xs:complexType name="ArrayOfRoundTypeDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoundTypeDto" type="tns:RoundTypeDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoundTypeDto" nillable="true" type="tns:ArrayOfRoundTypeDto" />
+  <xs:simpleType name="RoundTypeDto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="ThreeSixNine" />
+      <xs:enumeration value="Puzzle" />
+      <xs:enumeration value="Lists" />
+      <xs:enumeration value="Gallery" />
+      <xs:enumeration value="Video" />
+      <xs:enumeration value="Finale" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RoundTypeDto" nillable="true" type="tns:RoundTypeDto" />
+  <xs:complexType name="ResetGameDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Team1Seconds" type="xs:int" />
+      <xs:element minOccurs="0" name="Team2Seconds" type="xs:int" />
+      <xs:element minOccurs="0" name="Team3Seconds" type="xs:int" />
+      <xs:element minOccurs="0" name="Turn" type="tns:TurnTypeDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResetGameDto" nillable="true" type="tns:ResetGameDto" />
+  <xs:simpleType name="TurnTypeDto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Team1" />
+      <xs:enumeration value="Team2" />
+      <xs:enumeration value="Team3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TurnTypeDto" nillable="true" type="tns:TurnTypeDto" />
+  <xs:complexType name="ThreeSixNineQuestionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Answer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Photo" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Question" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThreeSixNineQuestionDto" nillable="true" type="tns:ThreeSixNineQuestionDto" />
+  <xs:complexType name="PuzzleQuestionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Answer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hint1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hint2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hint3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hint4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PuzzleQuestionDto" nillable="true" type="tns:PuzzleQuestionDto" />
+  <xs:complexType name="GalleryDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Questions" nillable="true" type="tns:ArrayOfGalleryQuestionDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GalleryDto" nillable="true" type="tns:GalleryDto" />
+  <xs:complexType name="ArrayOfGalleryQuestionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GalleryQuestionDto" nillable="true" type="tns:GalleryQuestionDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGalleryQuestionDto" nillable="true" type="tns:ArrayOfGalleryQuestionDto" />
+  <xs:complexType name="GalleryQuestionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Answer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Photo" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PhotoAnswer" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GalleryQuestionDto" nillable="true" type="tns:GalleryQuestionDto" />
+  <xs:complexType name="VideoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Answer1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Answer2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Answer3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Answer4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Answer5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Question" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VideoPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VideoDto" nillable="true" type="tns:VideoDto" />
+  <xs:complexType name="ArrayOfTurnTypeDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TurnTypeDto" type="tns:TurnTypeDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTurnTypeDto" nillable="true" type="tns:ArrayOfTurnTypeDto" />
+  <xs:simpleType name="FinaleTurnTypeDto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Team1" />
+      <xs:enumeration value="Team2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FinaleTurnTypeDto" nillable="true" type="tns:FinaleTurnTypeDto" />
+  <xs:complexType name="FinaleQuestionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Answer1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Answer2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Answer3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Answer4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Answer5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Played" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Question" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FinaleQuestionDto" nillable="true" type="tns:FinaleQuestionDto" />
+  <xs:complexType name="FinaleDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Team1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Team1Seconds" type="xs:int" />
+      <xs:element minOccurs="0" name="Team2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Team2Seconds" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FinaleDto" nillable="true" type="tns:FinaleDto" />
+  <xs:complexType name="ArrayOfPuzzleQuestionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PuzzleQuestionDto" nillable="true" type="tns:PuzzleQuestionDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPuzzleQuestionDto" nillable="true" type="tns:ArrayOfPuzzleQuestionDto" />
+</xs:schema>

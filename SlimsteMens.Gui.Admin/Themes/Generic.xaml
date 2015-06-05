@@ -1,0 +1,52 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:SlimsteMens.Gui.Admin.ViewModels"
+                    xmlns:v="clr-namespace:SlimsteMens.Gui.Admin.Views">
+    <DataTemplate DataType="{x:Type vm:StartViewModel}">
+        <v:StartView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:ThreeSixNineRoundViewModel}">
+        <v:ThreeSixNineRoundView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:PuzzleRoundViewModel}">
+        <v:PuzzleRoundView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:GalleryRoundViewModel}">
+        <v:GalleryRoundView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AddThreeSixNineQuestionViewModel}">
+        <v:AddThreeSixNineQuestionView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AddPuzzleQuestionViewModel}">
+        <v:AddPuzzleQuestionView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AddGalleryViewModel}">
+        <v:AddGalleryView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AddVideoQuestionViewModel}">
+        <v:AddVideoQuestionView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:VideoRoundViewModel}">
+        <v:VideoRoundView />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:AddFinaleQuestionViewModel}">
+        <v:AddFinaleQuestionView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:TieBreakerQuestionViewModel}">
+        <v:TieBreakerQuestionView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:FinaleRoundViewModel}">
+        <v:FinaleRoundView />
+    </DataTemplate>
+</ResourceDictionary>

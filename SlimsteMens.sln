@@ -1,0 +1,117 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{FCCE1316-2141-42AF-9690-053AB3821ACA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gui", "Gui", "{FF29988D-9863-44A9-B4E7-72B65F29A8E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{C1E4AF76-F752-4596-8251-719CEFEE46D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "SlimsteMens.Model\Model.csproj", "{E68DD034-A0A3-4913-A90A-D18355B9BAA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "SlimsteMens.DataAccess\DataAccess.csproj", "{FD440540-EE13-4482-9B4B-42595C8A1A2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gui.Admin", "SlimsteMens.Gui.Admin\Gui.Admin.csproj", "{165CD1E7-E5FF-4BF4-8FCE-A384B58E9414}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gui.Controls", "SlimsteMens.Gui.Controls\Gui.Controls.csproj", "{3B22DF8D-8477-49E2-89F7-3F0C54973B7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "SlimsteMens.Service\Service.csproj", "{15B3E0D2-6217-493A-A690-158C497F5318}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "SlimsteMens.Services\Services.csproj", "{B3C234A7-8EDC-4AE0-8AC1-4EC6FF314C1B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{15B3E0D2-6217-493A-A690-158C497F5318} = {15B3E0D2-6217-493A-A690-158C497F5318}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F9B23C00-8482-43E9-B8BA-7154E201459D}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gui.App", "SlimsteMens.Gui.App\Gui.App.csproj", "{397ED830-71B7-4A7E-9FAB-C7D34F3AE28A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://arducon.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SlimsteMens.Model\\Model.csproj
+		SccProjectTopLevelParentUniqueName1 = SlimsteMens.sln
+		SccProjectName1 = SlimsteMens.Model
+		SccLocalPath1 = SlimsteMens.Model
+		SccProjectUniqueName2 = SlimsteMens.DataAccess\\DataAccess.csproj
+		SccProjectTopLevelParentUniqueName2 = SlimsteMens.sln
+		SccProjectName2 = SlimsteMens.DataAccess
+		SccLocalPath2 = SlimsteMens.DataAccess
+		SccProjectUniqueName3 = SlimsteMens.Gui.Admin\\Gui.Admin.csproj
+		SccProjectTopLevelParentUniqueName3 = SlimsteMens.sln
+		SccProjectName3 = SlimsteMens.Gui.Admin
+		SccLocalPath3 = SlimsteMens.Gui.Admin
+		SccProjectUniqueName4 = SlimsteMens.Gui.Controls\\Gui.Controls.csproj
+		SccProjectTopLevelParentUniqueName4 = SlimsteMens.sln
+		SccProjectName4 = SlimsteMens.Gui.Controls
+		SccLocalPath4 = SlimsteMens.Gui.Controls
+		SccProjectUniqueName5 = SlimsteMens.Service\\Service.csproj
+		SccProjectTopLevelParentUniqueName5 = SlimsteMens.sln
+		SccProjectName5 = SlimsteMens.Service
+		SccLocalPath5 = SlimsteMens.Service
+		SccProjectUniqueName6 = SlimsteMens.Services\\Services.csproj
+		SccProjectTopLevelParentUniqueName6 = SlimsteMens.sln
+		SccProjectName6 = SlimsteMens.Services
+		SccLocalPath6 = SlimsteMens.Services
+		SccProjectUniqueName7 = SlimsteMens.Gui.App\\Gui.App.csproj
+		SccProjectTopLevelParentUniqueName7 = SlimsteMens.sln
+		SccProjectName7 = SlimsteMens.Gui.App
+		SccLocalPath7 = SlimsteMens.Gui.App
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E68DD034-A0A3-4913-A90A-D18355B9BAA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E68DD034-A0A3-4913-A90A-D18355B9BAA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E68DD034-A0A3-4913-A90A-D18355B9BAA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E68DD034-A0A3-4913-A90A-D18355B9BAA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD440540-EE13-4482-9B4B-42595C8A1A2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD440540-EE13-4482-9B4B-42595C8A1A2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD440540-EE13-4482-9B4B-42595C8A1A2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD440540-EE13-4482-9B4B-42595C8A1A2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{165CD1E7-E5FF-4BF4-8FCE-A384B58E9414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165CD1E7-E5FF-4BF4-8FCE-A384B58E9414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165CD1E7-E5FF-4BF4-8FCE-A384B58E9414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165CD1E7-E5FF-4BF4-8FCE-A384B58E9414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B22DF8D-8477-49E2-89F7-3F0C54973B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B22DF8D-8477-49E2-89F7-3F0C54973B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B22DF8D-8477-49E2-89F7-3F0C54973B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B22DF8D-8477-49E2-89F7-3F0C54973B7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3C234A7-8EDC-4AE0-8AC1-4EC6FF314C1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C234A7-8EDC-4AE0-8AC1-4EC6FF314C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C234A7-8EDC-4AE0-8AC1-4EC6FF314C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C234A7-8EDC-4AE0-8AC1-4EC6FF314C1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{397ED830-71B7-4A7E-9FAB-C7D34F3AE28A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{397ED830-71B7-4A7E-9FAB-C7D34F3AE28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{397ED830-71B7-4A7E-9FAB-C7D34F3AE28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{397ED830-71B7-4A7E-9FAB-C7D34F3AE28A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E68DD034-A0A3-4913-A90A-D18355B9BAA3} = {FCCE1316-2141-42AF-9690-053AB3821ACA}
+		{FD440540-EE13-4482-9B4B-42595C8A1A2F} = {FCCE1316-2141-42AF-9690-053AB3821ACA}
+		{165CD1E7-E5FF-4BF4-8FCE-A384B58E9414} = {FF29988D-9863-44A9-B4E7-72B65F29A8E7}
+		{3B22DF8D-8477-49E2-89F7-3F0C54973B7A} = {FF29988D-9863-44A9-B4E7-72B65F29A8E7}
+		{15B3E0D2-6217-493A-A690-158C497F5318} = {C1E4AF76-F752-4596-8251-719CEFEE46D1}
+		{B3C234A7-8EDC-4AE0-8AC1-4EC6FF314C1B} = {FCCE1316-2141-42AF-9690-053AB3821ACA}
+		{397ED830-71B7-4A7E-9FAB-C7D34F3AE28A} = {FF29988D-9863-44A9-B4E7-72B65F29A8E7}
+	EndGlobalSection
+EndGlobal
